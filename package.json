@@ -1,0 +1,15 @@
+{
+  "name": "ws-websocket-server",
+  "version": "1.0.0",
+  "description": "用 Node.js 的 ws 架的簡易型 HTTP + Webscoket Server 範例",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node public/server.js"
+  },
+  "author": "Alvin <lcndance1999@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "ws": "^7.0.0"
+  }
+}
