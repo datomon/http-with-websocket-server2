@@ -1,8 +1,7 @@
 ### 關於
     (1)用 Node.js 的 ws 架的簡易型 HTTP + Webscoket 範例
     (2)目標用途：client 端使用特定的 HTTP POST 請求發送參數，請求內容用 Websocket 廣播給所有已連接者
-    (3)是此專案不使用 Express，改用核心 http 模組的版本：
-       https://github.com/datomon/http-with-websocket-server
+    (3)是此專案不使用 Express，改用核心 http 模組的版本：https://github.com/datomon/http-with-websocket-server
 
 ### 測試環境
     Node.js：v10.15.1
