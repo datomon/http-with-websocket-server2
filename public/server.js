@@ -56,7 +56,7 @@ server.on('request', (req, res) => {
             body = JSON.parse(body);  //解晰 JSON 物件為 JS 物件
             
             //向本機的 Websocket Server 建立連線
-            let conn = new WebSocket('ws://127.0.0.1:' + ListenPort);
+            let conn = new WebSocket('ws://' + Host + ':' + ListenPort);
             conn.onopen = () => {
                 conn.send(body.name + ',' + body.account);  //發送訊息
                 conn.close();  //關閉連線
