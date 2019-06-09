@@ -65,10 +65,11 @@ server.on('request', (req, res) => {
             res.writeHead(200, {'Content-Type': 'application/json'});
             res.end(JSON.stringify({ status: 0, message: '請求ok'}));
         });
-    } else {
-        res.writeHead(403, {'Content-Type': 'application/json'});
-        res.end(JSON.stringify({ status: 1, message: '請求失敗，請檢查 API 及 Method 是否正確!'}));
     }
+
+    // 請求的 Method 或 Path 有誤時
+    res.writeHead(403, {'Content-Type': 'application/json'});
+    res.end(JSON.stringify({ status: 1, message: '請求失敗，請檢查 API 及 Method 是否正確!'}));
 });
 
 
