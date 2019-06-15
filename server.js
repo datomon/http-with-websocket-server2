@@ -5,7 +5,7 @@ const wss = new WebSocket.Server({ server });
 // const wss = new WebSocket.Server({ noServer: true });  //寫法二
 
 // Server host configuration
-let ServerCongif = require('../server-config');
+let ServerCongif = require('./server-config');
 const Host = ServerCongif.host;  // host
 const ListenPort = ServerCongif.port;  //listen Port
 
