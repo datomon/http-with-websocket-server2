@@ -5,7 +5,7 @@ const wss = new WebSocket.Server({ server });
 // const wss = new WebSocket.Server({ noServer: true });  //寫法二
 
 // Server host configuration
-let ServerCongif = require('../server-config');
+let ServerCongif = require('./server-config');
 const Host = ServerCongif.host;  // host
 const ListenPort = ServerCongif.port;  //listen Port
 
@@ -43,8 +43,9 @@ server.on('request', (req, res) => {
         res.end(JSON.stringify({ status: 1, message: '資料格式請使用 JSON'}));
     }
     
-    // 限定請求的 Method 及 Path
     let pathname = require('url').parse(req.url, true).pathname;
+    
+    // 限定請求的 Method 及 Path
     if (req.method === 'POST' && pathname === '/getUser') {
         let body = '';
         req.on('data', chunk => {
@@ -65,11 +66,12 @@ server.on('request', (req, res) => {
             res.writeHead(200, {'Content-Type': 'application/json'});
             res.end(JSON.stringify({ status: 0, message: '請求ok'}));
         });
-    }
 
-    // 請求的 Method 或 Path 有誤時
-    res.writeHead(403, {'Content-Type': 'application/json'});
-    res.end(JSON.stringify({ status: 1, message: '請求失敗，請檢查 API 及 Method 是否正確!'}));
+    } else {
+        // 請求的 Method 或 Path 有誤時
+        res.writeHead(403, {'Content-Type': 'application/json'});
+        res.end(JSON.stringify({ status: 1, message: '請求失敗，請檢查 API 及 Method 是否正確!'}));
+    }
 });
 
 

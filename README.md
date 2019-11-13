@@ -10,14 +10,17 @@
 
 ### 使用方式
     (1)安裝套件：npm install
-    (2)啟動 Server：npm run start 或 node public/server
+    (2)啟動 Server：npm run start 或 node server
 
 ### 測試
     (1)先用 Webscoket 連線工具連線「127.0.0.1:3000」
        例如：chrome 瀏覽器可以用「Simple WebSocket Client」擴充功能
-    (2)用 Postman 發送 HTTP POST 請求，路由為「/getUser」
-       請求參數為 name、account，資料必須用 JSON 格式
-       若要修改路由請至 server.js 修改
+    (2)用 Postman 發送 HTTP POST 請求
+       網址：http://127.0.0.1:3000/getUser
+       請求參數：name、account
+       資料格式：JSON
+       
+       註：若要修改路由、port 號請至 server.js 修改
 
 ### 參考文件
     (1)https://www.npmjs.com/package/ws
